@@ -1,0 +1,322 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(180deg,#f8fafc 0%, #eef2f7 100%);
+    color: #0f172a;
+    min-height: 100vh;
+}
+
+.app-container {
+    min-height: 100vh;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Branding */
+.brand-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg,#22c55e,#16a34a);
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(16,24,40,0.08);
+    font-size: 1.05rem;
+}
+
+.brand-logo .brand-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.brand-logo .brand-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+/* Page header */
+.page-header {
+    margin-bottom: 1.5rem;
+}
+
+.page-header h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.25rem;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.page-header p {
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+/* Card grid - align with Bootstrap spacing */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+/* Cards (can be links) */
+.card {
+    padding: 1.25rem;
+    border-radius: 0.6rem;
+    background: #ffffff;
+    border: 1px solid #e6eef7;
+    color: #0f172a;
+    box-shadow: 0 8px 24px rgba(16,24,40,0.04);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+    text-decoration: none; /* remove underline */
+    display: block;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px rgba(16,24,40,0.10);
+    border-color: rgba(34,197,94,0.12);
+}
+
+.card h2 {
+    font-size: 1.12rem;
+    margin-bottom: 0.35rem;
+    color: #0f172a;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.card h2 .fa-fw {
+    width: 1.05rem;
+    text-align: center;
+    font-size: 1.05rem;
+}
+
+/* Badges for card metadata */
+.badge {
+    display: inline-block;
+    padding: 0.28rem 0.5rem;
+    border-radius: 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+/* Quick actions small grid inside the dashboard */
+.quick-actions-card .action-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+}
+
+@media (min-width: 576px) {
+    .quick-actions-card .action-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.action-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.12s ease, transform 0.08s ease;
+}
+
+.action-item:hover {
+    background: rgba(15,23,42,0.04);
+    transform: translateY(-3px);
+}
+
+.action-item .icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+}
+
+.quick-actions-card .card-title {
+    margin-bottom: 0.1rem;
+}
+
+.quick-actions-card .card-text {
+    margin-bottom: 0.6rem;
+    color: #64748b;
+}
+
+.badge-soft-success {
+    background: rgba(34,197,94,0.08);
+    color: #166534;
+    border: 1px solid rgba(187,247,208,0.6);
+}
+
+.badge-soft-primary {
+    background: rgba(59,130,246,0.06);
+    color: #1d4ed8;
+    border: 1px solid rgba(191,219,254,0.6);
+}
+
+.badge-soft-info {
+    background: rgba(14,165,233,0.06);
+    color: #0ea5e9;
+    border: 1px solid rgba(191,219,254,0.6);
+}
+
+.badge-soft-muted {
+    background: rgba(148,163,184,0.06);
+    color: #475569;
+    border: 1px solid rgba(226,232,240,0.6);
+}
+
+.card p {
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+footer {
+    margin-top: 3rem;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+/* Form layout - lighter and aligned with Bootstrap */
+.panel {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.4rem 1.2rem;
+    border-radius: 0.6rem;
+    background: #ffffff;
+    border: 1px solid #e6eef7;
+    box-shadow: 0 12px 30px rgba(16,24,40,0.06);
+}
+
+.panel h2 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.panel p {
+    color: #475569;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.9rem 1rem;
+}
+
+.form-field label {
+    font-size: 0.9rem;
+    color: #0f172a;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    padding: 0.55rem 0.7rem;
+    border-radius: 0.45rem;
+    border: 1px solid #e6eef7;
+    background: #ffffff;
+    color: #0f172a;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34,197,94,0.08);
+}
+
+.button-row {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+}
+
+/* Override Bootstrap primary to green to match brand */
+.btn-primary {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border-color: transparent;
+    box-shadow: 0 8px 20px rgba(34,197,94,0.18);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background: linear-gradient(135deg, #16a34a, #13843a);
+    box-shadow: 0 12px 28px rgba(34,197,94,0.22);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: #0f172a;
+    border: 1px solid #e6eef7;
+}
+
+.message {
+    margin-top: 1rem;
+    padding: 0.65rem 0.9rem;
+    border-radius: 0.45rem;
+    font-size: 0.92rem;
+}
+
+.message.success {
+    background: #ecfdf5;
+    border: 1px solid #bbf7d0;
+    color: #064e3b;
+}
+
+.message.error {
+    background: #fff1f2;
+    border: 1px solid #fecaca;
+    color: #7f1d1d;
+}
+
+.details-list {
+    margin-top: 0.75rem;
+    border-radius: 0.45rem;
+    border: 1px solid #e6eef7;
+    background: #ffffff;
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+}
+
+.details-list dt {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.details-list dd {
+    margin: 0 0 0.45rem;
+    color: #334155;
+}
